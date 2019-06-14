@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+    - "8097:8097" # <host-port>:<container-port>
+    volumes:
+    - ./app:/app # <host-directory>:<container-directory>
+    - /app/node_modules # include node_modules
+    command: "npm start" # start up command
